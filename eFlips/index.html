@@ -26,6 +26,12 @@
         html .km-wp-light *:not(.k-label) > select {
             background: #fff;
         }
+        
+        div.question {
+           clear:both 
+        }
+        
+        div.question input {float:right}
     </style>
 </head>
 <body>
@@ -36,10 +42,14 @@
 
         <div class="view-content">
             <h1>Home</h1>
-            <a id="skin-change" data-role="button" data-click="app.changeSkin">Flat</a>
-            <p>
-                Put properties here.
-            </p>
+              <div data-role="content">
+				<form id="homeForm">
+					Property Name:
+					<input type="text" id="propertyName" value="Limin's Home" />
+					Property Address:
+					<input type="text" id="propertyAddress" value="" />
+				</form>
+			</div>
             
         </div>
     </div>
@@ -50,10 +60,38 @@
 
         <div class="view-content">
             <h1>Summary</h1>
-            <a id="skin-change" data-role="button" data-click="app.changeSkin">Flat</a>
-            <p>
-                Put Summary here.
-            </p>
+            
+              <div data-role="content">
+				<form id="homeForm">
+                    <div class="question">
+					Purchase Amounta:
+					<input type="text" readonly="true" id="Purchase" value="$1.0" />
+                    </div>
+                    <div class="question">
+                    Soft Cost:
+					<input type="text" readonly="true" id="Soft" value="$1.0" />
+                    </div>
+                    <div class="question">                    
+                    Improvement Cost:
+					<input type="text" readonly="true" id="Improvement" value="$1.0" />
+                    </div>
+                    <div class="question">
+                    Toal:                        
+					<input type="text" readonly="true" id="Toal" value="$1.0" />
+                    </div>                    
+                    <div class="question">
+                    Sale Price:
+					<input type="text" id="Sale" value="$1.0" />
+                    </div>
+                    <div class="question">
+                    Profit:
+					<input type="text" readonly="true" id="Profit" value="$1.0" />
+					</div>
+                    
+				</form>
+			</div>
+
+            
             
         </div>
     </div>
@@ -66,7 +104,6 @@
 
         <div class="view-content">
             <h1>Detail</h1>
-            <a id="skin-change" data-role="button" data-click="app.changeSkin">Flat</a>
             <p>
                 Put details here.
             </p>
@@ -80,10 +117,13 @@
 
         <div class="view-content">
             <h1>Home</h1>
-            <a id="skin-change" data-role="button" data-click="app.changeSkin">Flat</a>
-            <p>
-                Put notes here.
-            </p>
+            <div data-role="content">
+				<form id="notesForm">
+					Notes:
+					<input type="text-area" id="propertyName" value="" />
+					
+				</form>
+			</div>
             
         </div>
     </div>
