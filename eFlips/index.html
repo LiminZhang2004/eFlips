@@ -11,9 +11,6 @@
     <script src="kendo/js/kendo.mobile.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
 
-    <script src="scripts/login.js"></script>
-    <script src="scripts/location.js"></script>
-    <script src="scripts/weather.js"></script>
     <script src="scripts/app.js"></script>
     <style>
         html .km-wp-light .km-content,
@@ -44,10 +41,14 @@
             <h1>Home</h1>
               <div data-role="content">
 				<form id="homeForm">
+                    <div class="question">
 					Property Name:
 					<input type="text" id="propertyName" value="Limin's Home" />
+                    </div>
+                    <div class="question">
 					Property Address:
 					<input type="text" id="propertyAddress" value="" />
+                    </div>
 				</form>
 			</div>
             
@@ -100,26 +101,21 @@
 
     <div id="tabstrip-detail"
         data-role="view"
-        data-title="Detail">
+        data-title="Detail"
+        data-init="MovieTickets.movieList.initialize"
+        data-model="MovieTickets.movieList.viewModel">
 
         <div class="view-content">
-            <div class="action">
-                <button class="button" id="capturePhotoButtonBefore">Take Photo Before</button>
-                <button class="button" id="capturePhotoButtonAfter">Take Photo After</button>
-            </div>
             
-               <div class="result-area">
-                <div class="results">
-                    <img style="display:none;margin:5px auto; width:120px; height:120px;" id="beforeImage" src="" />
-                    <img style="display:none;margin:5px auto; width:120px; height:120px;" id="afterImage" src="" />
-                </div>
-				<div class="separator"></div>
-			</div
+           <ul id="mt-main-movie-list-view" data-role="listview"
+            data-template="mt-main-tmpl-movie-list"
+            data-bind="source:movieList">
+        </ul>
             
-            </div>
+        </div>
            
         </div>     
-    </div>
+    
  
     <div id="tabstrip-notes"
         data-role="view"
@@ -155,5 +151,20 @@
         <div data-role="footer">
         </div>
     </div>
+    
+    
+       <!--template for movie list -->
+    <script type="text/x-kendo-template" id="mt-main-tmpl-movie-list">  
+        # var ecodedURI = '\\#mt-theaters-movie-view?movieId=' +
+                         Id + '&movieName=' + 
+                         Name + '&rating=' +
+                         Rating + '&image=' + Image #
+                
+      
+
+   <a href="#:ecodedURI#" >
+        #:ecodedURI#
+      </a>    
+    </script>
 </body>
 </html>
