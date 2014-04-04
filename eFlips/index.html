@@ -12,6 +12,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
 
     <script src="scripts/data.js"></script>
+     <script src="scripts/dataAccess.js"></script>
     <script src="scripts/cameraApp.js"></script>
     <script src="scripts/app.js"></script>
     
@@ -38,7 +39,9 @@
     <!--Home-->
     <div id="tabstrip-home"
         data-role="view"
-        data-title="Home">
+        data-title="Home"
+        data-init="Eflips.itemList.initialize"
+        data-model="Eflips.itemList.viewModel">
 
         <div class="view-content">
             <h1>Home</h1>
@@ -46,11 +49,11 @@
 				<form id="homeForm">
                     <div class="question">
 					Property Name:
-					<input type="text" id="propertyName" value="Limin's Home" />
+					<input type="text" id="propertyName" data-bind="value:property.name" />
                     </div>
                     <div class="question">
 					Property Address:
-					<input type="text" id="propertyAddress" value="" />
+					<input type="text" id="propertyAddress" data-bind="value:property.address" />
                     </div>
 				</form>
 			</div>
@@ -68,7 +71,7 @@
               <div data-role="content">
 				<form id="homeForm">
                     <div class="question">
-					Purchase Amounta:
+					Purchase Amount:
 					<input type="text" readonly="true" id="Purchase" value="$1.0" />
                     </div>
                     <div class="question">
@@ -105,14 +108,14 @@
     <div id="tabstrip-detail"
         data-role="view"
         data-title="Detail"
-        data-init="Eflips.movieList.initialize"
-        data-model="Eflips.movieList.viewModel">
+        data-init="Eflips.itemList.initialize"
+        data-model="Eflips.itemList.viewModel">
 
         <div class="view-content">
             
            <ul id="mt-main-movie-list-view" data-role="listview"
             data-template="mt-main-tmpl-movie-list"
-            data-bind="source:movieList">
+            data-bind="source:itemList">
         </ul>
             
         </div>
@@ -125,11 +128,10 @@
         data-title="Notes">
 
         <div class="view-content">
-            <h1>Home</h1>
+            <h1>Notes</h1>
             <div data-role="content">
 				<form id="notesForm">
-					Notes:
-					<input type="text-area" id="propertyName" value="" />
+					<input type="text-area" id="propertyNotes" value="" />
 					
 				</form>
 			</div>
@@ -159,9 +161,7 @@
        <!--template for movie list -->
     <script type="text/x-kendo-template" id="mt-main-tmpl-movie-list">  
         # var ecodedURI = '\\#mt-theaters-movie-view?movieId=' +
-                         Id + '&movieName=' + 
-                         Name + '&rating=' +
-                         Rating + '&image=' + Image #
+                         ip + '&movieName=' #
                 
       
 
