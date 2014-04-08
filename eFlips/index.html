@@ -7,12 +7,19 @@
     <link href="styles/main.css" rel="stylesheet" />
 
     <script src="cordova.js"></script>
+    <script src="scripts/fileHelper.js"></script>
+    
+    <script src="scripts/init.js"></script>
+    
     <script src="kendo/js/jquery.min.js"></script>
     <script src="kendo/js/kendo.mobile.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
 
+    
+    
+    <script src="scripts/localDatabaseAccess.js"></script>
+    <script src="scripts/remoteDataAccess.js"></script>
     <script src="scripts/data.js"></script>
-     <script src="scripts/dataAccess.js"></script>
     <script src="scripts/cameraApp.js"></script>
     <script src="scripts/app.js"></script>
     
@@ -112,7 +119,8 @@
         data-model="Eflips.itemList.viewModel">
 
         <div class="view-content">
-            
+           <h1>Detail</h1>
+         
            <ul id="mt-main-movie-list-view" data-role="listview"
             data-template="mt-main-tmpl-movie-list"
             data-bind="source:itemList">
@@ -126,7 +134,6 @@
     <div id="tabstrip-notes"
         data-role="view"
         data-title="Notes">
-
         <div class="view-content">
             <h1>Notes</h1>
             <div data-role="content">
@@ -160,14 +167,11 @@
     
        <!--template for movie list -->
     <script type="text/x-kendo-template" id="mt-main-tmpl-movie-list">  
-        # var ecodedURI = '\\#mt-theaters-movie-view?movieId=' +
-                         ip + '&movieName=' #
-                
-      
-
-   <a href="#:ecodedURI#" >
-        #:ecodedURI#
-      </a>    
+        
+       <div class="question">
+			#:Name#
+		   <input type="text" id="#:Name#" value="#:Value#" />
+        </div>   
     </script>
 </body>
 </html>

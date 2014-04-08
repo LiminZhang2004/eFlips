@@ -1,4 +1,4 @@
-Eflips.dataAccess = (function () {
+Eflips.remoteDataAccess = (function () {
 
     //options input parameter will have all the data needed
     //to perform the ajax call

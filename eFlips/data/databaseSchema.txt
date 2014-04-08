@@ -1,0 +1,241 @@
+DROP TABLE IF EXISTS "AttributeTypes";
+CREATE TABLE "AttributeTypes" ("ID" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE , "name" VARCHAR, "type" INTEGER NOT NULL  DEFAULT 0);
+INSERT INTO "AttributeTypes" VALUES(1,'Property Address',1);
+INSERT INTO "AttributeTypes" VALUES(2,'Purchase Amount',0);
+INSERT INTO "AttributeTypes" VALUES(3,'Purchase Fee',0);
+INSERT INTO "AttributeTypes" VALUES(4,'Recording Fee',0);
+INSERT INTO "AttributeTypes" VALUES(5,'Transfer Tax',0);
+INSERT INTO "AttributeTypes" VALUES(6,'Sales, Agent Fee',0);
+INSERT INTO "AttributeTypes" VALUES(7,'Office Administration Fees',0);
+INSERT INTO "AttributeTypes" VALUES(8,'Insurance',0);
+INSERT INTO "AttributeTypes" VALUES(9,'Power',0);
+INSERT INTO "AttributeTypes" VALUES(10,'Water',0);
+INSERT INTO "AttributeTypes" VALUES(11,'Gas',0);
+INSERT INTO "AttributeTypes" VALUES(12,'Miscellaneous',0);
+INSERT INTO "AttributeTypes" VALUES(13,'Trash Out',0);
+INSERT INTO "AttributeTypes" VALUES(14,'Landscape Front Only',0);
+INSERT INTO "AttributeTypes" VALUES(15,'Landscape All Perimeter',0);
+INSERT INTO "AttributeTypes" VALUES(16,'Exterior Paint/Trim',0);
+INSERT INTO "AttributeTypes" VALUES(17,'Exterior Pressure Wash',0);
+INSERT INTO "AttributeTypes" VALUES(18,'Roof Repair',0);
+INSERT INTO "AttributeTypes" VALUES(19,'Window Replacement/Cleaning',0);
+INSERT INTO "AttributeTypes" VALUES(20,'Exterior Doors/Locks',0);
+INSERT INTO "AttributeTypes" VALUES(21,'Tile Repair/Grout',0);
+INSERT INTO "AttributeTypes" VALUES(22,'Plaster',0);
+INSERT INTO "AttributeTypes" VALUES(23,'Acid Wash Plaster/Tile',0);
+INSERT INTO "AttributeTypes" VALUES(24,'Paint',0);
+INSERT INTO "AttributeTypes" VALUES(25,'Pumps & Filter/Heater',0);
+INSERT INTO "AttributeTypes" VALUES(26,'Decking/Paint',0);
+INSERT INTO "AttributeTypes" VALUES(27,'Exterior Lights/Fixtures',0);
+INSERT INTO "AttributeTypes" VALUES(28,'Block Wall/Fencing',0);
+INSERT INTO "AttributeTypes" VALUES(29,'Driveway',0);
+INSERT INTO "AttributeTypes" VALUES(30,'Interior Paint',0);
+INSERT INTO "AttributeTypes" VALUES(31,'Flooring Carpet Cleaning Repair',0);
+INSERT INTO "AttributeTypes" VALUES(32,'Flooring Tile Grout Cleaning',0);
+INSERT INTO "AttributeTypes" VALUES(33,'Casings',0);
+INSERT INTO "AttributeTypes" VALUES(34,'Interior Doors & Hardware',0);
+INSERT INTO "AttributeTypes" VALUES(35,'Crown Moulding',0);
+INSERT INTO "AttributeTypes" VALUES(36,'Window Treatments',0);
+INSERT INTO "AttributeTypes" VALUES(37,'Counter Tops',0);
+INSERT INTO "AttributeTypes" VALUES(38,'Interior light fixtures & recepticals',0);
+INSERT INTO "AttributeTypes" VALUES(39,'Plumbing Fixtures',0);
+INSERT INTO "AttributeTypes" VALUES(40,'Cabinetry',0);
+INSERT INTO "AttributeTypes" VALUES(41,'Finish Framing',0);
+INSERT INTO "AttributeTypes" VALUES(42,'Cooling/Heating',0);
+INSERT INTO "AttributeTypes" VALUES(43,'Electrical Repairs',0);
+INSERT INTO "AttributeTypes" VALUES(44,'Appliances',0);
+INSERT INTO "AttributeTypes" VALUES(45,'Final Clean',0);
+INSERT INTO "AttributeTypes" VALUES(46,'Shower Tile',0);
+INSERT INTO "AttributeTypes" VALUES(47,'Flooring',0);
+INSERT INTO "AttributeTypes" VALUES(48,'Plumbing Fixtures',0);
+INSERT INTO "AttributeTypes" VALUES(49,'Lighting Fixtures/Replace Bulbs',0);
+INSERT INTO "AttributeTypes" VALUES(50,'Cabinets',0);
+INSERT INTO "AttributeTypes" VALUES(51,'Fixtures',0);
+INSERT INTO "AttributeTypes" VALUES(52,'Before Photo',2);
+INSERT INTO "AttributeTypes" VALUES(53,'After Photo',2);
+INSERT INTO "AttributeTypes" VALUES(54,'Notes',1);
+INSERT INTO "AttributeTypes" VALUES(55,'Sale Price',0);
+
+INSERT INTO "AttributeTypes" VALUES(56,'Company Name',1);
+INSERT INTO "AttributeTypes" VALUES(57,'Address',1);
+INSERT INTO "AttributeTypes" VALUES(58,'Contact Name',1);
+INSERT INTO "AttributeTypes" VALUES(59,'Telephone',1);
+INSERT INTO "AttributeTypes" VALUES(60,'Fax',1);
+INSERT INTO "AttributeTypes" VALUES(61,'Email',1);
+INSERT INTO "AttributeTypes" VALUES(62,'BlackBerryID',1);
+INSERT INTO "AttributeTypes" VALUES(63,'iPhoneID',1);
+INSERT INTO "AttributeTypes" VALUES(64,'AndroidID',1);
+INSERT INTO "AttributeTypes" VALUES(65,'WindowsID',1);
+INSERT INTO "AttributeTypes" VALUES(66,'SymbianID',1);
+
+
+DROP TABLE IF EXISTS "Attributes";
+CREATE TABLE "Attributes" ("ID" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE , "partID" INTEGER NOT NULL ,"type" INTEGER NOT NULL ,"cost" DOUBLE,"state" INTEGER NOT NULL  DEFAULT (0) ,"seq" INTEGER NOT NULL  DEFAULT (0) ,"timestamp" DATETIME, "value" BLOB);
+INSERT INTO "Attributes" VALUES(0,0,1,0,0,1,'2011-01-02','2811 36a Ave');
+INSERT INTO "Attributes" VALUES(1,0,2,150000,0,1,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(2,1,3,3000,0,2,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(3,1,4,17,0,3,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(4,1,5,765,0,4,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(5,1,6,500,0,5,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(6,1,7,300,0,6,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(7,1,8,485,0,7,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(8,1,9,250,0,8,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(9,1,10,300,0,9,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(10,1,11,150,0,10,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(11,1,12,600,0,11,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(12,2,13,1400,0,1,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(13,2,14,1500,0,2,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(14,2,15,2256.65,0,3,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(15,2,16,140,0,4,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(16,2,17,1400,0,5,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(17,2,18,400,0,6,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(18,2,19,370,0,7,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(19,2,20,48,0,8,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(20,3,21,100,0,1,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(21,3,22,100,0,2,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(22,3,23,250,0,3,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(23,3,24,150,0,4,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(24,3,25,257.5,0,5,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(25,3,26,226,0,6,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(26,2,27,200,0,10,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(27,2,28,2000,0,11,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(28,2,29,1800,0,12,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(29,4,30,3400,0,1,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(30,4,31,2280,0,2,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(31,4,32,2878,0,3,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(32,4,33,600,0,4,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(33,4,34,785,0,5,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(34,4,35,320,0,6,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(35,4,36,200,0,7,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(36,4,37,2500,0,8,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(37,4,38,1287.4,0,9,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(38,4,39,770,0,10,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(39,4,40,2800,0,11,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(40,4,41,600,0,12,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(41,4,42,500,0,13,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(42,4,43,400,0,14,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(43,4,44,2140,0,15,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(44,4,45,350,0,16,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(45,5,46,200,0,1,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(46,5,47,150,0,2,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(47,5,48,75,0,3,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(48,5,49,25,0,4,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(49,5,50,80,0,5,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(50,5,24,40,0,6,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(51,5,51,0,0,7,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(52,6,46,200,0,1,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(53,6,47,150,0,2,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(54,6,48,75,0,3,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(55,6,49,25,0,4,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(56,6,50,80,0,5,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(57,6,24,40,0,6,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(58,6,51,0,0,7,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(59,7,46,200,0,1,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(60,7,47,150,0,2,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(61,7,48,75,0,3,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(62,7,49,25,0,4,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(63,7,50,80,0,5,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(64,7,24,40,0,6,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(65,7,51,0,0,7,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(66,8,47,100,0,1,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(67,8,51,150,0,2,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(68,8,12,200,0,3,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(69,9,47,100,0,1,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(70,9,51,150,0,2,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(71,9,12,200,0,3,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(72,10,47,100,0,1,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(73,10,51,150,0,2,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(74,10,12,200,0,3,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(75,11,47,100,0,1,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(76,11,51,150,0,2,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(77,11,12,200,0,3,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(78,0,54,0,0,1,'2011-01-02','The notes about this house');
+INSERT INTO "Attributes" VALUES(79,0,55,250000,0,2,'2011-01-02',NULL);
+INSERT INTO "Attributes" VALUES(80,12,56,250000,0,1,'2011-01-02','Hotbinder');
+
+DROP TABLE IF EXISTS "Codes";
+CREATE TABLE "Codes" ("ID" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE , "code" VARCHAR NOT NULL );
+INSERT INTO "Codes" VALUES(1,'Purchase Cost');
+INSERT INTO "Codes" VALUES(2,'Soft Costs');
+INSERT INTO "Codes" VALUES(3,'Improvement Costs');
+INSERT INTO "Codes" VALUES(4,'Total');
+INSERT INTO "Codes" VALUES(5,'Sale Price');
+INSERT INTO "Codes" VALUES(6,'Profit');
+INSERT INTO "Codes" VALUES(7,'Property Name');
+
+
+DROP TABLE IF EXISTS "DataTypes";
+CREATE TABLE "DataTypes" ("ID"  PRIMARY KEY  NOT NULL  UNIQUE , "name"  NOT NULL  UNIQUE );
+INSERT INTO "DataTypes" VALUES(0,'Double');
+INSERT INTO "DataTypes" VALUES(1,'String');
+INSERT INTO "DataTypes" VALUES(2,'Image');
+DROP TABLE IF EXISTS "PartTypes";
+CREATE TABLE "PartTypes" ("ID" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE , "name"  NOT NULL  UNIQUE );
+INSERT INTO "PartTypes" VALUES(1,'SELF');
+INSERT INTO "PartTypes" VALUES(2,'Contact');
+INSERT INTO "PartTypes" VALUES(3,'Soft');
+INSERT INTO "PartTypes" VALUES(4,'ExtConst');
+INSERT INTO "PartTypes" VALUES(5,'Pool');
+INSERT INTO "PartTypes" VALUES(6,'IntConst');
+INSERT INTO "PartTypes" VALUES(7,'Bathroom');
+INSERT INTO "PartTypes" VALUES(8,'Bedroom');
+
+DROP TABLE IF EXISTS "Parts";
+CREATE TABLE "Parts" (     "ID" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE , "propertyID" INTEGER, "parentID" INTEGER, "name" VARCHAR, "type" INTEGER NOT NULL  DEFAULT 3, "state" INTEGER NOT NULL  DEFAULT 0, "seq" INTEGER NOT NULL  DEFAULT 0, "timestamp" DATETIME);
+INSERT INTO "Parts" VALUES(0,1,NULL,'SELF',1,0,0,'2011-01-02');
+INSERT INTO "Parts" VALUES(1,1,NULL,'SOFT COSTS',3,0,1,'2011-01-02');
+INSERT INTO "Parts" VALUES(2,1,NULL,'EXTERIOR CONSTRUCTION COSTS',4,0,2,'2011-01-02');
+INSERT INTO "Parts" VALUES(3,1,2,'Pool',5,0,9,'2011-01-02');
+INSERT INTO "Parts" VALUES(4,1,NULL,'INTERIOR CONSTRUCTION COSTS',6,0,3,'2011-01-02');
+INSERT INTO "Parts" VALUES(5,1,NULL,'BATHROOM 1',7,0,4,'2011-01-02');
+INSERT INTO "Parts" VALUES(6,1,NULL,'BATHROOM 2',7,0,5,'2011-01-02');
+INSERT INTO "Parts" VALUES(7,1,NULL,'BATHROOM 3',7,0,6,'2011-01-02');
+INSERT INTO "Parts" VALUES(8,1,NULL,'BEDROOM 1',8,0,7,'2011-01-02');
+INSERT INTO "Parts" VALUES(9,1,NULL,'BEDROOM 2',8,0,8,'2011-01-02');
+INSERT INTO "Parts" VALUES(10,1,NULL,'BEDROOM 3',8,0,9,'2011-01-02');
+INSERT INTO "Parts" VALUES(11,1,NULL,'BEDROOM 4',8,0,10,'2011-01-02');
+INSERT INTO "Parts" VALUES(12,1,NULL,'Contact 1',2,0,10,'2011-01-02');
+
+DROP TABLE IF EXISTS "Properties";
+CREATE TABLE "Properties" ("ID" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE , "name" VARCHAR, "template" BOOL DEFAULT false, "timestamp" DATETIME);
+INSERT INTO "Properties" VALUES(1,'My Home','false','2011-01-02');
+DROP TABLE IF EXISTS "mprma";
+CREATE TABLE "mprma" ("col_1" );
+INSERT INTO "mprma" VALUES('DROP TABLE IF EXISTS "AttributeTypes";');
+INSERT INTO "mprma" VALUES('DROP TABLE IF EXISTS "Attributes";');
+INSERT INTO "mprma" VALUES('DROP TABLE IF EXISTS "Codes";');
+INSERT INTO "mprma" VALUES('DROP TABLE IF EXISTS "PartTypes";');
+INSERT INTO "mprma" VALUES('DROP TABLE IF EXISTS "Parts";');
+INSERT INTO "mprma" VALUES('DROP TABLE IF EXISTS "Properties";');
+INSERT INTO "mprma" VALUES('DROP TABLE IF EXISTS "DataTypes";');
+
+
+CREATE TRIGGER insert_Attributes_timeEnter AFTER  INSERT ON Attributes
+BEGIN
+      UPDATE Attributes SET timestamp = DATETIME('NOW')  WHERE rowid = new.rowid;
+END;
+CREATE TRIGGER insert_Parts_timeEnter AFTER  INSERT ON Parts
+BEGIN
+      UPDATE Parts SET timestamp = DATETIME('NOW')  WHERE rowid = new.rowid;
+END;
+CREATE TRIGGER insert_Properties_timeEnter AFTER  INSERT ON Properties
+BEGIN
+      UPDATE Properties SET timestamp = DATETIME('NOW')  WHERE rowid = new.rowid;
+END;
+
+
+CREATE TRIGGER update_Attributes_timeEnter UPDATE ON Attributes
+BEGIN
+    UPDATE Attributes SET timestamp = DATETIME('NOW') WHERE rowid = old.rowid;
+END;
+
+CREATE TRIGGER update_Parts_timeEnter UPDATE ON Parts
+BEGIN
+    UPDATE Parts SET timestamp = DATETIME('NOW') WHERE rowid = old.rowid;
+END;
+
+CREATE TRIGGER update_Properties_timeEnter UPDATE ON Properties
+BEGIN
+    UPDATE Properties SET timestamp = DATETIME('NOW') WHERE rowid = old.rowid;
+END;
+

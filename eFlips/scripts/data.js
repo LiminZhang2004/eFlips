@@ -1,4 +1,4 @@
-Eflips = {}
+
 
 Eflips.itemList = (function () {
 
@@ -12,12 +12,31 @@ Eflips.itemList = (function () {
     function getMovieList(listType) {
     
         //service call
-        console.log("test log");
+        console.log("test log" +  Eflips.localDatabaseAccess);
       
-       //var list = [{Id : 1, Name : "Name", ReleaseYear : 1989, Rating : 9, Reviews : "Great"}, {Id : 1, Name : "Name2", ReleaseYear : 1999, Rating : 10, Reviews : "Great"}]; 
+        that = this;
+        
+       //var list = [{Name : "Soft Cost", Value:120}, {Name : "Exterior Cost", Value : 121}, {Name:"Interior Cost", Value:122}]; 
+       that.callback = function(result) {
+        
+            console.log("get data" +  result.success + result.data[0].name);
+            
+            if (result.success === true) {
+                //alert(result.data.ip);
+                viewModel.set("itemList", result.data);   
+                viewModel.set("property", {name : result.data[0].name, address : result.data[0].name});  
+            }
+        }
+    
+        
+        Eflips.localDatabaseAccess.initialize(function(){
+            
+            Eflips.localDatabaseAccess.getProperty(that.callback), function() {alert("Error");}
+        });
+        
         
         //viewModel.set("itemList", list);  
-          var movieListoptions = {
+          /*var movieListoptions = {
             url: "http://ip.jsontest.com/",
             data: { listType: listType },
             requestType: "GET",
@@ -25,15 +44,10 @@ Eflips.itemList = (function () {
             callBack: callBack
         };
         //service call
-        Eflips.dataAccess.callService(movieListoptions);
+        Eflips.remoteDataAccess.callService(movieListoptions);*/
     }
     //callback method from service call
-    function callBack(result) {
-        if (result.success === true) {
-            //alert(result.data.ip);
-            viewModel.set("itemList", [result.data]);                       
-        }
-    }
+  
 
     //this event is fired when movie list
     //type is changed from the UI
@@ -46,8 +60,6 @@ Eflips.itemList = (function () {
     function init(){
         
         getMovieList(0);
-        
-        viewModel.set("property", {name : "My home", address : "Edmonton"});  
         
     }
 
